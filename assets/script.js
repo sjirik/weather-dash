@@ -3,11 +3,11 @@ var cityInput = document.querySelector('#city');
 var dataContainer = document.querySelector('#data-container');
 var dataSearched = document.querySelector('#city-search');
 
-var selectedCity = cityInput.value.trim();
+
 
 var userSubmit = function (event) {
   event.preventDefault();
-
+  var selectedCity = cityInput.value.trim();
   if (selectedCity) {
     getWeather(selectedCity);
     dataContainer.textContent = '';
