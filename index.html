@@ -10,6 +10,30 @@
 </head>
 
 <body>
+  
+  <header>
+    <h1 class="title">Weather Dashboard</h1>
+  </header>
+    
+  <main class="flex-row">
+    <div>
+        <div class="container">
+        <h3 class="container-head">SEARCH FOR CITY</h3>
+        <form id="form" class="container-body">
+          <label class="form-label" for="city"></label>
+          <input name="city" id="city" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="button">Search</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="containertwo">
+      <h2 class="display">Showing Weather Data for: <span id="city-search"></span></h2>
+      <div id="repos-container" class="list-group"></div>
+    </div>
+  </main>
+
+  <script src="./assets/script.js"></script>
 
 </body>
 
