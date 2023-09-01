@@ -4,7 +4,7 @@ var dataContainer = document.querySelector('#data-container');
 var dataSearched = document.querySelector('#city-search');
 
 
-
+/*This function takes the value inputted in the form to ensure it is valid, if so, it runs the next function*/
 var userSubmit = function (event) {
   event.preventDefault();
   var selectedCity = cityInput.value.trim();
@@ -17,7 +17,7 @@ var userSubmit = function (event) {
   }
 };
 
-
+/*This pulls the data from the API using a fetch. (I cannot overcome the CORS dilemna I am facing so I am continuing to write the JS in hopes that I am on the right track) */
 var getWeather = function (place) {
   var apiUrl = 'api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02a7b6b8e73b5f959b18d22551b1f45b';
 
@@ -36,7 +36,7 @@ var getWeather = function (place) {
     });
 };
 
-
+/* This displays the weather info for the city starting with a city name. I need to add one for the city weather, and an icon. */
 var displayWeather = function (cities, searchTerm) {
   if (cities.length === 0) {
     dataContainer.textContent = 'Please enter a real City';
@@ -64,5 +64,5 @@ var displayWeather = function (cities, searchTerm) {
     dataContainer.appendChild(cityEl);
   }
 };
-
+/*This event listener begins the entire application */
 userInput.addEventListener('submit', userSubmit);
