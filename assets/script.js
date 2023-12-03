@@ -45,3 +45,71 @@ fetch(url)
     });
 }
 
+function createB () { 
+    console.log(allCities)
+    for (var i = 0; i <allCities.length; i++){
+        var cityB = document.createElement("button")
+        cityB.textContent = allCities[i]
+        cityB.setAttribute("value", allCities[i])
+        cityB.onclick = function(){
+          forcast(this.value)
+        }
+        document.querySelector(".previous-cities").appendChild(cityB)
+    }
+}
+createB()
+
+function displayF (weatherArray, searchCity, data) {
+    document.querySelector(".container-cards").innerHTML = ""
+    for (var i = 0 ; i < weatherArray.length ; i ++) {
+        var weatherLi = data.list
+        var icon = document.createElement("img")
+        icon.setAttribute("src", "http://openweathermap.org/img/wn/" + weatherLi[i].weather[0].icon + "@2x.png")
+        var cardD = document.createElement("div")
+        cardD.setAttribute("class", "card")
+        cardD.setAttribute("style", "width:18rem")
+        var cardB = document.createElement("div")
+        cardB.setAttribute("class", "card-body")
+        var ulCard = document.createElement("ul")
+        ulCard.setAttribute("class", "ulCard")
+    
+        var liCardN = document.createElement("li")
+        liCardN.setAttribute("class", "liName")
+        liCardN.innerText = searchCity
+    
+        var liCardT = document.createElement("li")
+        liCardT.setAttribute("class", "liTemp")
+        liCardT.innerText = "Temperature: " + weatherArray[i].main.temp
+  
+        var liCardW = document.createElement("li")
+        liCardW.setAttribute("class", "liWind")
+        liCardW.innerText = "Wind Speed: " + weatherArray[i].wind.speed + " mph"
+   
+        var liCardH = document.createElement("li")
+        liCardH.setAttribute("class", "liHumidity")
+        liCardH.innerText = "Humidity " + weatherArray[i].main.humidity + "%"
+      
+        cardD.appendChild(cardB)
+        cardB.appendChild(ulCard)
+        ulCard.append(icon, liCardN, liCardT, liCardW, liCardH)
+        document.querySelector(".container-cards").appendChild(cardD)
+    }
+}
+
+function currentWeather (weatherobj){
+
+    document.querySelector(".container-info").innerHTML = ""
+
+    var pN = document.createElement("p")
+    pN.textContent = weatherobj.name
+  
+    var pT = document.createElement("p")
+    pT.textContent = "Temperature: " + weatherobj.temp
+
+    var pW = document.createElement("p")
+    pW.textContent = "Wind: " + weatherobj.wind
+
+    var pH = document.createElement("p")
+    pH.textContent = "Humidity: " + weatherobj.humidity
+    document.querySelector(".container-info").append(pN, pT, pW, pH)
+}
