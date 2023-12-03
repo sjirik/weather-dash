@@ -1,0 +1,69 @@
+.container-info {
+  background-color: blueviolet;
+  font-size: 35px;
+  color: yellow;
+  padding: 25px;
+}
+
+.container-cards {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  background-color: blueviolet;
+}
+
+.header {
+  font-size: 55px;
+  padding: 22px;
+  text-align: center;
+  background-color: blueviolet;
+  color: yellow; 
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 25%;
+  background-color: purple;
+  color: yellow;
+}
+
+.right {
+  width: 75%;
+}
+
+.card-1, .card-2, .card-3, .card-4, .card-5 {
+  background-color: purple;
+  color: plum;
+}
+
+ul {
+  text-align: center;
+
+}
+
+.container-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+li {
+  list-style: none;
+}
+
+.previous-cities {
+  padding: 15px;
+  color: yellow;
+}
+
+.hide {
+  display: none;
+}
